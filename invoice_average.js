@@ -34,11 +34,11 @@ const showStatistics = (invoices) => {
 }
 
 
-const statistics = showStatistics(invoices)
-console.log(`Menor faturamento: ${statistics.lowerInvoice}`)
-console.log(`Maior faturamento: ${statistics.highestInvoice}`)
-console.log(`Média: ${statistics.anualAverage}`)
-console.log(`Quantidade de dias com faturamento acima da média: ${statistics.daysAboveAverage}`)
+const {lowerInvoice,highestInvoice,anualAverage,daysAboveAverage} = showStatistics(invoices)
+console.log(`Menor faturamento: ${lowerInvoice}`)
+console.log(`Maior faturamento: ${highestInvoice}`)
+console.log(`Média: ${anualAverage}`)
+console.log(`Quantidade de dias com faturamento acima da média: ${daysAboveAverage}`)
 
 /*  OUTPUT
 
