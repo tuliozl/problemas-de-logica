@@ -10,19 +10,20 @@
 const invoices = [ 1500, 150, 10890, 3500, 128, 4752, 124125,3658]
 
 const showStatistics = (invoices) => {
-    let lowerInvoice = 0
+    let lowerInvoice = Number.MAX_VALUE
     let highestInvoice = 0
-    let invoiceSum = 0
 
     invoices.map((invoice) => {
         if (invoice > 0) {
-            if (invoice < lowerInvoice) lowerInvoice = invoice
-            if (invoice > highestInvoice) highestInvoice = invoice
-            invoiceSum += invoice
+            if (invoice < lowerInvoice) 
+                lowerInvoice = invoice
+            
+            if (invoice > highestInvoice) 
+                highestInvoice = invoice
         }
     })
 
-    const anualAverage = invoiceSum / invoices.length //considerando que no vetor há todos os dias do ano com faturamento
+    const anualAverage = invoices.reduce((a, b) => a + b) / invoices.length //considerando que no vetor há todos os dias do ano com faturamento
     let daysAboveAverage = invoices.filter(invoice => invoice > anualAverage).length
 
     return {
