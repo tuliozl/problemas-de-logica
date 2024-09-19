@@ -10,8 +10,8 @@
 const invoices = [ 1500, 150, 10890, 3500, 128, 4752, 124125,3658]
 
 const showStatistics = (invoices) => {
-    let lowerInvoice = Number.MAX_VALUE
-    let highestInvoice = Number.MIN_VALUE
+    let lowerInvoice = 0
+    let highestInvoice = 0
     let invoiceSum = 0
 
     invoices.map((invoice) => {
